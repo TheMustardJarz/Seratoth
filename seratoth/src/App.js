@@ -18,11 +18,11 @@ function App(props) {
   })
 
   return (
-    <>
-      <h1>
+    <div>
+      <button onClick={() => setVal({value} + 1)}>
         {value}
-      </h1>
-    </>
+      </button>
+    </div>
   );
 }
 
