@@ -1,9 +1,16 @@
 DROP TABLE IF EXISTS test CASCADE;
+DROP TABLE IF EXISTS userl CASCADE;
 
 CREATE TABLE test (
     id SERIAL PRIMARY KEY NOT NULL,
     numVal INT
 );
 
-INSERT INTO test(numVal) VALUES
-    (1);
+CREATE TABLE userl (
+    id SERIAL PRIMARY KEY NOT NULL,
+    realName VARCHAR(40),
+    screenName VARCHAR(40)
+);
+
+INSERT INTO test(id, numVal) VALUES
+    (1, 1);
