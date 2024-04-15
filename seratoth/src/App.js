@@ -18,10 +18,11 @@ function App(props) {
 
   return (
     <div>
-      <HeaderBar>
-      </HeaderBar>
       <button onClick={() => setVal(prevValue => prevValue + 1)}>
         {value}
+      </button>
+      <button>
+        Login!
       </button>
     </div>
   );
