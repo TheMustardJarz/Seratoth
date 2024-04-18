@@ -1,29 +1,51 @@
 import React from 'react';
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import './App.css';
-import HeaderBar from './HeaderBar'
 
 function App(props) {
-  const [value, setVal] = useState(null)
+  const [username, setUsername] = useState(null)
+  const [password, setpassword] = useState(null)
+  const [email, setEmail] = useState(null)
 
-  useEffect(() => {
-    function fetchData() {
-      fetch('http://localhost:3000/')
-      .then(response => {return response.json()})
-      .then(jsonOutput => {setVal(jsonOutput)})
-      .catch((error => console.log("**Fetch exception:" + error)))
-    }
-    fetchData()
-  })
+  const handleUser = e => {
+    setUsername(userField.value)
+    userField.value = ""
+    setpassword(passField.value)
+    passField.value = ""
+    setEmail(emailField.value)
+    emailField.value = ""
+  }
+
+  var userField = document.getElementById("usernameField")
+  var passField = document.getElementById("passwordField")
+  var emailField = document.getElementById("emailField")
 
   return (
     <div>
-      <button onClick={() => setVal(prevValue => prevValue + 1)}>
-        {value}
-      </button>
-      <button>
-        Login!
-      </button>
+      <div>
+      </div>
+      <div>
+        <button onClick={handleUser}>
+          Login!
+        </button>
+      </div>
+      <div>
+        <input id='usernameField'>
+        </input>
+        <input id='passwordField' type='password'>
+        </input>
+        <input id='emailField' type='email'>
+        </input>
+      </div>
+      <div>
+        Current Username: {username}
+      </div>
+      <div>
+        Current Unhashed Password: {password}
+      </div>
+      <div>
+        Current Email: {email}
+      </div>
     </div>
   );
 }
