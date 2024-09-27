@@ -1,4 +1,4 @@
-from db_utils import *
+from api.db_utils import *
 
 def register_user(username, password, email):
     exec_commit("INSERT INTO users VALUES (%s, %s, %s)", (username, password, email))
