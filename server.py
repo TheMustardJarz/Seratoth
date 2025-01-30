@@ -6,6 +6,7 @@ from api.FrontPage import *
 
 app = Flask(__name__)
 CORS(app)
+api = Api(app)
 
 @app.route("/")
 def home():
