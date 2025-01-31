@@ -12,7 +12,7 @@ api = Api(app)
 def home():
     return render_template("index.html")
 
-@app.route("/aboutPage")
+@app.route("/about")
 def about():
     return render_template("aboutPage.html")
 

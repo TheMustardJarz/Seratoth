@@ -3,5 +3,5 @@ function changeName() {
 }
 
 function goToAboutPage() {
-    window.location.href = "/aboutPage"
+    window.location.href = "/about"
 }
